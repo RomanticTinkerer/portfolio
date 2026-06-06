@@ -48,14 +48,14 @@ export const DATA = {
 
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://linkedin.com/in/animesh-singh",
         icon: Icons.linkedin,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://dub.sh/dillion-twitter",
+        url: "https://x.com/RomanticTinkerer",
         icon: Icons.x,
 
         navbar: true,
@@ -76,7 +76,17 @@ export const DATA = {
     },
   },
 
-  work: [],
+  work: [] as readonly {
+    readonly company: string;
+    readonly href?: string;
+    readonly badges?: readonly string[];
+    readonly location?: string;
+    readonly title: string;
+    readonly logoUrl: string;
+    readonly start: string;
+    readonly end?: string;
+    readonly description?: string;
+  }[],
   education: [
     {
       school: "City Montessori School",
@@ -145,5 +155,16 @@ export const DATA = {
       video: "",
     },
   ],
-  hackathons: [],
+  hackathons: [] as readonly {
+    readonly title: string;
+    readonly dates: string;
+    readonly location?: string;
+    readonly description?: string;
+    readonly image?: string;
+    readonly links?: readonly {
+      readonly title: string;
+      readonly icon: any;
+      readonly href: string;
+    }[];
+  }[],
 } as const;
