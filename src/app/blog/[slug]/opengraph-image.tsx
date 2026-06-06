@@ -1,4 +1,4 @@
- 
+
 
 import { ImageResponse } from "next/og";
 import { allPosts } from "content-collections";
@@ -15,21 +15,21 @@ export const contentType = "image/png";
 
 const getFontData = async () => {
     try {
-        const [cabinetGrotesk, clashDisplay] = await Promise.all([
+        const [helveticaNeue, ndot55] = await Promise.all([
             fetch(
                 new URL(
-                    "../../../../public/fonts/CabinetGrotesk-Medium.ttf",
+                    "../../../../public/fonts/HelveticaNeueLight.otf",
                     import.meta.url
                 )
             ).then((res) => res.arrayBuffer()),
             fetch(
                 new URL(
-                    "../../../../public/fonts/ClashDisplay-Semibold.ttf",
+                    "../../../../public/fonts/Ndot55-Regular.otf",
                     import.meta.url
                 )
             ).then((res) => res.arrayBuffer()),
         ]);
-        return { cabinetGrotesk, clashDisplay };
+        return { helveticaNeue, ndot55 };
     } catch (error) {
         console.error("Failed to load fonts:", error);
         return null;
@@ -91,9 +91,9 @@ const styles = {
         objectFit: "cover",
     },
     title: {
-        fontFamily: "Clash Display",
+        fontFamily: "Ndot 55",
         fontSize: "48px",
-        fontWeight: "600",
+        fontWeight: "400",
         lineHeight: "1.1",
         textAlign: "left",
         color: "#000000",
@@ -103,7 +103,7 @@ const styles = {
     },
     description: {
         fontSize: "20px",
-        fontWeight: "400",
+        fontWeight: "300",
         lineHeight: "1.5",
         textAlign: "left",
         maxWidth: "800px",
@@ -113,7 +113,7 @@ const styles = {
     },
     date: {
         fontSize: "16px",
-        fontWeight: "400",
+        fontWeight: "300",
         lineHeight: "1.5",
         textAlign: "left",
         color: "#666666",
@@ -157,9 +157,9 @@ export default async function Image({
                     fonts: fontData
                         ? [
                             {
-                                name: "Clash Display",
-                                data: fontData.clashDisplay,
-                                weight: 600,
+                                name: "Ndot 55",
+                                data: fontData.ndot55,
+                                weight: 400,
                                 style: "normal",
                             },
                         ]
@@ -205,21 +205,15 @@ export default async function Image({
                 fonts: fontData
                     ? [
                         {
-                            name: "Cabinet Grotesk",
-                            data: fontData.cabinetGrotesk,
+                            name: "Helvetica Neue",
+                            data: fontData.helveticaNeue,
+                            weight: 300,
+                            style: "normal",
+                        },
+                        {
+                            name: "Ndot 55",
+                            data: fontData.ndot55,
                             weight: 400,
-                            style: "normal",
-                        },
-                        {
-                            name: "Cabinet Grotesk",
-                            data: fontData.cabinetGrotesk,
-                            weight: 700,
-                            style: "normal",
-                        },
-                        {
-                            name: "Clash Display",
-                            data: fontData.clashDisplay,
-                            weight: 600,
                             style: "normal",
                         },
                     ]
