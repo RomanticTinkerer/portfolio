@@ -1,0 +1,80 @@
+import { Component, ChangeDetectionStrategy, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { Router } from "@angular/router";
+import { SeoLinkComponent } from '../../app/components/seo-link/seo-link.component';
+import '@banegasn/m3-button';
+import '@banegasn/m3-card';
+import '@banegasn/m3-switch';
+import '@banegasn/m3-radio-button';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [SeoLinkComponent]
+})
+export class HomeComponent {
+  constructor(private router: Router) { }
+
+  navigateToQuickStart() {
+    this.router.navigate(['/quick-start']);
+  }
+
+  navigateToComponents() {
+    this.router.navigate(['/components']);
+  }
+
+  navigateToNavigationRail() {
+    this.router.navigate(['/navigation-rail']);
+  }
+
+  navigateToButtons() {
+    this.router.navigate(['/buttons']);
+  }
+
+  navigateToCards() {
+    this.router.navigate(['/cards']);
+  }
+
+  navigateToNavigationBar() {
+    this.router.navigate(['/navigation-bar']);
+  }
+
+  navigateToSwitches() {
+    this.router.navigate(['/switches']);
+  }
+
+  navigateToRadioButtons() {
+    this.router.navigate(['/radio-buttons']);
+  }
+
+  navigateToSearchBar() {
+    this.router.navigate(['/search-bar']);
+  }
+
+  openGitHub() {
+    window.open('https://github.com/banegasn/components', '_blank');
+  }
+
+  openMaterialDesign() {
+    window.open('https://m3.material.io/', '_blank');
+  }
+
+  openTurborepo() {
+    window.open('https://turbo.build/repo/docs', '_blank');
+  }
+
+  openLitDocs() {
+    window.open('https://lit.dev/', '_blank');
+  }
+
+  openNpmPackage(packageName: string) {
+    window.open(`https://github.com/Banegasn/components/pkgs/npm/${packageName}`, '_blank');
+  }
+
+  openSimulation() {
+    window.open('cdn-example.html', '_blank');
+  }
+}

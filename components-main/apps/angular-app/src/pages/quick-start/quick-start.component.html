@@ -1,0 +1,66 @@
+<div class="page-container docs-page">
+  <header class="page-header">
+    <h1>Quick Start</h1>
+    <p class="subtitle">Integrate Material 3 Web Components into any project in minutes.</p>
+  </header>
+
+  <div class="qs-sections">
+
+    <section class="page-section">
+      <h2>CDN — no build step</h2>
+      <p>Import directly in your HTML via jsDelivr. Works in any modern browser with no tooling required.</p>
+      <app-code-block language="html" variant="block" [code]="cdnCode"></app-code-block>
+    </section>
+
+    <section class="page-section">
+      <h2>Install via package manager</h2>
+      <p>Install individual packages from npm for use in framework projects.</p>
+      <div class="code-grid">
+        <div>
+          <p class="code-label">npm</p>
+          <app-code-block language="bash" variant="block" [code]="installCode"></app-code-block>
+        </div>
+        <div>
+          <p class="code-label">pnpm</p>
+          <app-code-block language="bash" variant="block" [code]="pnpmCode"></app-code-block>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <h2>Angular</h2>
+      <p>Add <code>CUSTOM_ELEMENTS_SCHEMA</code> to your component or module to prevent template errors for unknown tags.</p>
+      <app-code-block language="typescript" variant="block" [code]="angularCode"></app-code-block>
+    </section>
+
+    <section class="page-section">
+      <h2>React</h2>
+      <p>React 19+ natively supports Custom Elements. Listen to custom events by prefixing with <code>on</code> — e.g. <code>onbutton-click</code>.</p>
+      <app-code-block language="jsx" variant="block" [code]="reactCode"></app-code-block>
+    </section>
+
+    <section class="page-section">
+      <h2>Vue</h2>
+      <p>Vue has native support for Custom Elements. Use standard Vue directives like <code>&#64;button-click</code> to listen to custom events.</p>
+      <app-code-block language="html" variant="block" [code]="vueCode"></app-code-block>
+    </section>
+
+    <section class="qs-section qs-section--demo">
+      <h2>Live demo</h2>
+      <p>See all components working together in an interactive task management dashboard — no build step, pure CDN.</p>
+      <div class="demo-showcase">
+        <div class="demo-images">
+          <img src="sim-desktop.png" alt="Desktop simulation" class="demo-image demo-image--desktop">
+          <img src="sim-mobile.png" alt="Mobile simulation" class="demo-image demo-image--mobile">
+        </div>
+        <a href="cdn-example.html" target="_blank" rel="noopener" class="demo-cta">
+          <m3-button variant="filled">
+            <span slot="icon" class="material-symbols-outlined">open_in_new</span>
+            Open live demo
+          </m3-button>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>

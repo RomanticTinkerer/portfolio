@@ -1,0 +1,47 @@
+.results-container {
+  padding: 16px;
+}
+
+.result-item {
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: 8px;
+  color: var(--md-sys-color-on-surface);
+}
+
+.result-item:last-child {
+  margin-bottom: 0;
+}
+
+.properties-list {
+  padding: 16px;
+}
+
+.property-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface);
+}
+
+.property-item:last-child {
+  border-bottom: none;
+}
+
+.property-item strong {
+  color: var(--md-sys-color-primary);
+  font-weight: 500;
+}
+
+.property-item code {
+  background-color: var(--md-sys-color-surface-container-high);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--md-sys-color-on-surface);
+}
+
+.menu-button {
+  --md-sys-color-primary: var(--md-sys-color-on-surface);
+}
+

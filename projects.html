@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animesh — Projects</title>
+  <meta name="description" content="Open-source projects by Animesh — focusing apps, audio enhancers, home theater software, health trackers, and Linux app stores." />
+  <meta name="author" content="Animesh" />
+
+  <!-- Fonts + Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+
+  <!-- M3 Web Components via CDN -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@banegasn/m3-chip/+esm"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@banegasn/m3-card/+esm"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Inline SVG defs for M3 Expressive shape clip-paths -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <clipPath id="shape-clover" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0 C0.65,0,0.72,0.08,0.78,0.22 C0.92,0.28,1,0.35,1,0.5 C1,0.65,0.92,0.72,0.78,0.78 C0.72,0.92,0.65,1,0.5,1 C0.35,1,0.28,0.92,0.22,0.78 C0.08,0.72,0,0.65,0,0.5 C0,0.35,0.08,0.28,0.22,0.22 C0.28,0.08,0.35,0,0.5,0Z"/>
+      </clipPath>
+      <clipPath id="shape-hex" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0 C0.58,0,0.82,0.08,0.9,0.22 C0.98,0.36,1,0.42,1,0.5 C1,0.58,0.98,0.64,0.9,0.78 C0.82,0.92,0.58,1,0.5,1 C0.42,1,0.18,0.92,0.1,0.78 C0.02,0.64,0,0.58,0,0.5 C0,0.42,0.02,0.36,0.1,0.22 C0.18,0.08,0.42,0,0.5,0Z"/>
+      </clipPath>
+      <clipPath id="shape-triangle" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0.04 C0.54,0.04,0.58,0.06,0.6,0.1 L0.96,0.72 C0.99,0.78,0.99,0.84,0.96,0.88 C0.93,0.93,0.88,0.96,0.82,0.96 L0.18,0.96 C0.12,0.96,0.07,0.93,0.04,0.88 C0.01,0.84,0.01,0.78,0.04,0.72 L0.4,0.1 C0.42,0.06,0.46,0.04,0.5,0.04Z"/>
+      </clipPath>
+      <clipPath id="shape-petal" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0 C0.78,0,1,0.22,1,0.5 C1,0.78,0.78,1,0.5,1 C0.22,1,0,0.78,0,0.5 C0,0.22,0.35,0,0.5,0Z"/>
+      </clipPath>
+      <clipPath id="shape-star6" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0 L0.6,0.28 L0.93,0.25 L0.72,0.5 L0.93,0.75 L0.6,0.72 L0.5,1 L0.4,0.72 L0.07,0.75 L0.28,0.5 L0.07,0.25 L0.4,0.28 Z"/>
+      </clipPath>
+      <clipPath id="shape-scallop" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0 C0.56,0,0.62,0.04,0.65,0.06 C0.7,0.02,0.78,0.02,0.82,0.06 C0.88,0.1,0.92,0.18,0.94,0.22 C0.98,0.26,1,0.34,1,0.38 C1,0.44,0.96,0.5,0.96,0.5 C0.96,0.5,1,0.56,1,0.62 C1,0.66,0.98,0.74,0.94,0.78 C0.92,0.82,0.88,0.9,0.82,0.94 C0.78,0.98,0.7,0.98,0.65,0.94 C0.62,0.96,0.56,1,0.5,1 C0.44,1,0.38,0.96,0.35,0.94 C0.3,0.98,0.22,0.98,0.18,0.94 C0.12,0.9,0.08,0.82,0.06,0.78 C0.02,0.74,0,0.66,0,0.62 C0,0.56,0.04,0.5,0.04,0.5 C0.04,0.5,0,0.44,0,0.38 C0,0.34,0.02,0.26,0.06,0.22 C0.08,0.18,0.12,0.1,0.18,0.06 C0.22,0.02,0.3,0.02,0.35,0.06 C0.38,0.04,0.44,0,0.5,0Z"/>
+      </clipPath>
+    </defs>
+  </svg>
+</head>
+<body>
+
+  <!-- AMBIENT FLOATING SHAPES -->
+  <div class="ambient-shapes" aria-hidden="true">
+    <div class="ambient-shape shape-1"></div>
+    <div class="ambient-shape shape-2"></div>
+    <div class="ambient-shape shape-3"></div>
+    <div class="ambient-shape shape-4"></div>
+    <div class="ambient-shape shape-5"></div>
+    <div class="ambient-shape shape-6"></div>
+    <div class="ambient-shape shape-7"></div>
+    <div class="ambient-shape shape-8"></div>
+    <div class="ambient-shape shape-9"></div>
+    <div class="ambient-shape shape-10"></div>
+    <div class="ambient-shape shape-11"></div>
+    <div class="ambient-shape shape-12"></div>
+    <div class="ambient-shape shape-13"></div>
+    <div class="ambient-shape shape-14"></div>
+    <div class="ambient-shape shape-15"></div>
+    <div class="ambient-shape shape-16"></div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PAGE HEADER                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <header class="hero projects-hero" id="projects-hero">
+      <div class="hero-decor" aria-hidden="true">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+      </div>
+      <div class="hero-inner" style="flex-direction: column; text-align: center; gap: 8px;">
+        <h1 class="hero-title" id="projects-title">
+          <span class="material-symbols-rounded" style="font-size: 1.6rem; vertical-align: -3px; margin-right: 6px;">folder_open</span>
+          Projects
+        </h1>
+        <p class="hero-subtitle" id="projects-subtitle">
+          Open-source tools I'm building for GNU/Linux, Android, and beyond.
+        </p>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PROJECT CARDS                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section projects-grid" id="projects-grid">
+
+      <!-- Deep Focus -->
+      <article class="project-card" id="project-deep-focus">
+        <div class="project-image-placeholder">
+          <span class="material-symbols-rounded placeholder-icon">image</span>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2 class="project-name">Deep Focus</h2>
+            <m3-chip variant="assist" class="project-status-chip">
+              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
+              WIP — 85%
+            </m3-chip>
+          </div>
+          <p class="project-desc">
+            Open-source focusing app that disables apps and websites at root level for a time period. 
+            An ideal focusing app for GNU/Linux. Inspired from Hollow Knight.
+          </p>
+          <div class="project-tags">
+            <m3-chip variant="assist">GNU/Linux</m3-chip>
+            <m3-chip variant="assist">Python</m3-chip>
+          </div>
+        </div>
+      </article>
+
+      <!-- AudioHawk -->
+      <article class="project-card" id="project-audiohawk">
+        <div class="project-image-placeholder">
+          <span class="material-symbols-rounded placeholder-icon">image</span>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2 class="project-name">AudioHawk</h2>
+            <m3-chip variant="assist" class="project-status-chip">
+              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
+              WIP
+            </m3-chip>
+          </div>
+          <p class="project-desc">
+            Open-source Audio Enhancer built on top of EasyEffects for Linux. Creates a better 
+            sound experience on the platform, aiming to be a similar software like Nahimic.
+          </p>
+          <div class="project-tags">
+            <m3-chip variant="assist">GNU/Linux</m3-chip>
+            <m3-chip variant="assist">Audio</m3-chip>
+            <m3-chip variant="assist">EasyEffects</m3-chip>
+          </div>
+        </div>
+      </article>
+
+      <!-- Eclectic Home -->
+      <article class="project-card" id="project-eclectic-home">
+        <div class="project-image-placeholder">
+          <span class="material-symbols-rounded placeholder-icon">image</span>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2 class="project-name">Eclectic Home</h2>
+            <m3-chip variant="assist" class="project-status-chip">
+              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
+              WIP
+            </m3-chip>
+          </div>
+          <p class="project-desc">
+            Built on foundational pillars of Kodi, VLC and Flutter. A complete Home theater software 
+            that allows you to run ANY game from your library (linked to 
+            <a href="https://lutris.net" target="_blank" rel="noopener noreferrer" class="inline-link">Lutris</a> 
+            — Steam, Heroic, etc.) as well as a plethora of movie and audio formats.
+          </p>
+          <div class="project-tags">
+            <m3-chip variant="assist">Flutter</m3-chip>
+            <m3-chip variant="assist">Kodi</m3-chip>
+            <m3-chip variant="assist">VLC</m3-chip>
+          </div>
+        </div>
+      </article>
+
+      <!-- solene -->
+      <article class="project-card" id="project-solene">
+        <div class="project-image-placeholder">
+          <span class="material-symbols-rounded placeholder-icon">image</span>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2 class="project-name">solene</h2>
+            <m3-chip variant="assist" class="project-status-chip">
+              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
+              WIP
+            </m3-chip>
+          </div>
+          <p class="project-desc">
+            Open-source period tracker built on top of the drip application, supercharged with features 
+            found in freemium apps — and all processing done entirely on-device.
+          </p>
+          <div class="project-tags">
+            <m3-chip variant="assist">Android</m3-chip>
+            <m3-chip variant="assist">Kotlin</m3-chip>
+            <m3-chip variant="assist">Privacy</m3-chip>
+          </div>
+        </div>
+      </article>
+
+      <!-- Treasury -->
+      <article class="project-card" id="project-treasury">
+        <div class="project-image-placeholder">
+          <span class="material-symbols-rounded placeholder-icon">image</span>
+        </div>
+        <div class="project-content">
+          <div class="project-header">
+            <h2 class="project-name">Treasury</h2>
+            <m3-chip variant="assist" class="project-status-chip">
+              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
+              WIP
+            </m3-chip>
+          </div>
+          <p class="project-desc">
+            A unified Linux Appstore for all distributions: Arch, Debian, and Fedora. Aims to simplify 
+            application installation, especially on Arch, and minimize terminal usage for non-tech people.
+          </p>
+          <div class="project-tags">
+            <m3-chip variant="assist">GNU/Linux</m3-chip>
+            <m3-chip variant="assist">Python</m3-chip>
+            <m3-chip variant="assist">Arch</m3-chip>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- BOTTOM DOCK                                  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <nav class="dock" id="dock" aria-label="Main navigation">
+    <div class="dock-inner">
+      <!-- Group 1: Pages -->
+      <div class="dock-group">
+        <a href="index.html" class="dock-item" id="dock-home" aria-label="Home">
+          <span class="material-symbols-rounded">home</span>
+          <span class="dock-label">Home</span>
+        </a>
+        <a href="projects.html" class="dock-item active" id="dock-projects" aria-label="Projects">
+          <span class="material-symbols-rounded">folder_open</span>
+          <span class="dock-label">Projects</span>
+        </a>
+      </div>
+
+      <div class="dock-divider" aria-hidden="true"></div>
+
+      <!-- Group 2: Socials -->
+      <div class="dock-group">
+        <a href="https://github.com/RomanticTinkerer" target="_blank" rel="noopener noreferrer" class="dock-item" id="dock-github" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span class="dock-label">GitHub</span>
+        </a>
+        <a href="https://romantictinkerer.medium.com" target="_blank" rel="noopener noreferrer" class="dock-item" id="dock-medium" aria-label="Medium">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M4 3h2l6 9.5L18 3h2v18h-2V7.5L12.5 16h-1L6 7.5V21H4V3z"/>
+          </svg>
+          <span class="dock-label">Medium</span>
+        </a>
+        <a href="mailto:animeshrocking14@gmail.com" class="dock-item" id="dock-email" aria-label="E-Mail">
+          <span class="material-symbols-rounded">mail</span>
+          <span class="dock-label">E-Mail</span>
+        </a>
+        <a href="https://discord.gg/9F7WXUARYn" target="_blank" rel="noopener noreferrer" class="dock-item" id="dock-discord" aria-label="Discord">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+          <span class="dock-label">Discord</span>
+        </a>
+      </div>
+
+      <div class="dock-divider" aria-hidden="true"></div>
+
+      <!-- Group 3: Theme toggle -->
+      <div class="dock-group">
+        <button class="dock-item dock-theme-toggle" id="dock-theme-toggle" aria-label="Toggle light/dark mode" type="button">
+          <span class="material-symbols-rounded icon-sun">light_mode</span>
+          <span class="material-symbols-rounded icon-moon">dark_mode</span>
+          <span class="dock-label">Theme</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scripts -->
+  <script>
+    // Scroll-reveal for project cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 }
+      );
+      document.querySelectorAll('.section, .hero, .project-card').forEach((el) => observer.observe(el));
+    });
+
+    // Light / Dark mode toggle (shared localStorage key)
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.getElementById('dock-theme-toggle');
+      const STORAGE_KEY = 'animesh-portfolio-theme';
+
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = stored || (prefersDark ? 'dark' : 'light');
+      root.setAttribute('data-theme', initial);
+
+      toggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem(STORAGE_KEY, next);
+      });
+    })();
+  </script>
+</body>
+</html>

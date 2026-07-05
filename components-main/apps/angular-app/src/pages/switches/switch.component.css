@@ -1,0 +1,111 @@
+.demo-switches {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.switch-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: var(--md-sys-color-surface);
+    border-radius: 8px;
+}
+
+.switch-item label {
+    font-size: 1rem;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 400;
+}
+
+.settings-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: var(--md-sys-color-surface);
+    border-radius: 12px;
+    gap: 16px;
+}
+
+.setting-info {
+    flex: 1;
+}
+
+.setting-info h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 4px 0;
+    color: var(--md-sys-color-on-surface);
+}
+
+.setting-info p {
+    font-size: 0.875rem;
+    margin: 0;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.4;
+}
+
+.props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.props-table thead {
+    background: var(--md-sys-color-surface-container-highest);
+}
+
+.props-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.props-table td {
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.props-table code {
+    font-family: var(--font-mono);
+    background: var(--md-sys-color-surface-container-highest);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    color: var(--md-sys-color-primary);
+}
+
+.props-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .props-table {
+        font-size: 0.75rem;
+    }
+
+    .props-table th,
+    .props-table td {
+        padding: 8px 12px;
+    }
+}

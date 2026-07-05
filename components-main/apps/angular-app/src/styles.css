@@ -1,0 +1,523 @@
+@import "highlight.js/styles/github-dark.css";
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* ─── Design tokens – light ─────────────────────────────── */
+:root {
+  /* Brand */
+  --md-sys-color-primary: #5b5bd6;
+  --md-sys-color-primary-hover: #4a4ac4;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ebebff;
+  --md-sys-color-on-primary-container: #1e1e6e;
+
+  /* Secondary */
+  --md-sys-color-secondary: #5b5bd6;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ebebff;
+  --md-sys-color-on-secondary-container: #1e1e6e;
+
+  /* Tertiary */
+  --md-sys-color-tertiary: #6b7280;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #f3f4f6;
+  --md-sys-color-on-tertiary-container: #374151;
+
+  /* Surface */
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-surface-variant: #f9fafb;
+  --md-sys-color-surface-container: #f3f4f6;
+  --md-sys-color-surface-container-low: #f9fafb;
+  --md-sys-color-surface-container-highest: #e5e7eb;
+
+  /* Text */
+  --md-sys-color-on-surface: #111827;
+  --md-sys-color-on-surface-variant: #3f4147;
+
+  /* Borders */
+  --md-sys-color-outline: #d1d5db;
+  --md-sys-color-outline-variant: #e5e7eb;
+
+  /* Elevation */
+  --md-sys-elevation-level2: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+}
+
+/* ─── Design tokens – dark ──────────────────────────────── */
+:root[theme="dark"] {
+  --md-sys-color-primary: #818cf8;
+  --md-sys-color-primary-hover: #939cf9;
+  --md-sys-color-on-primary: #1e1b4b;
+  --md-sys-color-primary-container: #312e81;
+  --md-sys-color-on-primary-container: #c7d2fe;
+
+  --md-sys-color-secondary: #818cf8;
+  --md-sys-color-on-secondary: #1e1b4b;
+  --md-sys-color-secondary-container: #312e81;
+  --md-sys-color-on-secondary-container: #c7d2fe;
+
+  --md-sys-color-tertiary: #9ca3af;
+  --md-sys-color-on-tertiary: #111827;
+  --md-sys-color-tertiary-container: #1f2937;
+  --md-sys-color-on-tertiary-container: #d1d5db;
+
+  --md-sys-color-surface: #131313;
+  --md-sys-color-surface-variant: #161616;
+  --md-sys-color-surface-container: #1a1a1a;
+  --md-sys-color-surface-container-low: #141414;
+  --md-sys-color-surface-container-highest: #262626;
+
+  --md-sys-color-on-surface: #f9fafb;
+  --md-sys-color-on-surface-variant: #d4dae2;
+
+  --md-sys-color-outline: #374151;
+  --md-sys-color-outline-variant: #1f2937;
+
+  --md-sys-elevation-level2: 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.3);
+}
+
+/* ─── Theme: Emerald (light) ────────────────────────────── */
+:root[theme="emerald"] {
+  --md-sys-color-primary: #059669;
+  --md-sys-color-primary-hover: #047857;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #d1fae5;
+  --md-sys-color-on-primary-container: #064e3b;
+  --md-sys-color-secondary: #059669;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #d1fae5;
+  --md-sys-color-on-secondary-container: #064e3b;
+  --md-sys-color-tertiary: #6b7280;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #f3f4f6;
+  --md-sys-color-on-tertiary-container: #374151;
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-surface-variant: #f0fdf4;
+  --md-sys-color-surface-container: #f0fdf4;
+  --md-sys-color-surface-container-low: #f7fef9;
+  --md-sys-color-surface-container-highest: #d1fae5;
+  --md-sys-color-on-surface: #111827;
+  --md-sys-color-on-surface-variant: #3f4147;
+  --md-sys-color-outline: #d1d5db;
+  --md-sys-color-outline-variant: #e5e7eb;
+}
+
+/* ─── Theme: Emerald (dark) ─────────────────────────────── */
+:root[theme="emerald-dark"] {
+  --md-sys-color-primary: #34d399;
+  --md-sys-color-primary-hover: #6ee7b7;
+  --md-sys-color-on-primary: #064e3b;
+  --md-sys-color-primary-container: #065f46;
+  --md-sys-color-on-primary-container: #a7f3d0;
+  --md-sys-color-secondary: #34d399;
+  --md-sys-color-on-secondary: #064e3b;
+  --md-sys-color-secondary-container: #065f46;
+  --md-sys-color-on-secondary-container: #a7f3d0;
+  --md-sys-color-tertiary: #9ca3af;
+  --md-sys-color-on-tertiary: #111827;
+  --md-sys-color-tertiary-container: #1f2937;
+  --md-sys-color-on-tertiary-container: #d1d5db;
+  --md-sys-color-surface: #131313;
+  --md-sys-color-surface-variant: #161616;
+  --md-sys-color-surface-container: #1a1a1a;
+  --md-sys-color-surface-container-low: #141414;
+  --md-sys-color-surface-container-highest: #262626;
+  --md-sys-color-on-surface: #f9fafb;
+  --md-sys-color-on-surface-variant: #d4dae2;
+  --md-sys-color-outline: #374151;
+  --md-sys-color-outline-variant: #1f2937;
+}
+
+/* ─── Theme: Rose (light) ───────────────────────────────── */
+:root[theme="rose"] {
+  --md-sys-color-primary: #e11d48;
+  --md-sys-color-primary-hover: #be123c;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffe4e6;
+  --md-sys-color-on-primary-container: #881337;
+  --md-sys-color-secondary: #e11d48;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ffe4e6;
+  --md-sys-color-on-secondary-container: #881337;
+  --md-sys-color-tertiary: #6b7280;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #f3f4f6;
+  --md-sys-color-on-tertiary-container: #374151;
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-surface-variant: #fff1f2;
+  --md-sys-color-surface-container: #fff1f2;
+  --md-sys-color-surface-container-low: #fff5f6;
+  --md-sys-color-surface-container-highest: #fecdd3;
+  --md-sys-color-on-surface: #111827;
+  --md-sys-color-on-surface-variant: #3f4147;
+  --md-sys-color-outline: #d1d5db;
+  --md-sys-color-outline-variant: #e5e7eb;
+}
+
+/* ─── Theme: Rose (dark) ────────────────────────────────── */
+:root[theme="rose-dark"] {
+  --md-sys-color-primary: #fb7185;
+  --md-sys-color-primary-hover: #fda4af;
+  --md-sys-color-on-primary: #881337;
+  --md-sys-color-primary-container: #9f1239;
+  --md-sys-color-on-primary-container: #fecdd3;
+  --md-sys-color-secondary: #fb7185;
+  --md-sys-color-on-secondary: #881337;
+  --md-sys-color-secondary-container: #9f1239;
+  --md-sys-color-on-secondary-container: #fecdd3;
+  --md-sys-color-tertiary: #9ca3af;
+  --md-sys-color-on-tertiary: #111827;
+  --md-sys-color-tertiary-container: #1f2937;
+  --md-sys-color-on-tertiary-container: #d1d5db;
+  --md-sys-color-surface: #131313;
+  --md-sys-color-surface-variant: #161616;
+  --md-sys-color-surface-container: #1a1a1a;
+  --md-sys-color-surface-container-low: #141414;
+  --md-sys-color-surface-container-highest: #262626;
+  --md-sys-color-on-surface: #f9fafb;
+  --md-sys-color-on-surface-variant: #d4dae2;
+  --md-sys-color-outline: #374151;
+  --md-sys-color-outline-variant: #1f2937;
+}
+
+/* ─── Theme: Amber (light) ──────────────────────────────── */
+:root[theme="amber"] {
+  --md-sys-color-primary: #d97706;
+  --md-sys-color-primary-hover: #b45309;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #fef3c7;
+  --md-sys-color-on-primary-container: #78350f;
+  --md-sys-color-secondary: #d97706;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #fef3c7;
+  --md-sys-color-on-secondary-container: #78350f;
+  --md-sys-color-tertiary: #6b7280;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #f3f4f6;
+  --md-sys-color-on-tertiary-container: #374151;
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-surface-variant: #fffbeb;
+  --md-sys-color-surface-container: #fffbeb;
+  --md-sys-color-surface-container-low: #fffdf5;
+  --md-sys-color-surface-container-highest: #fde68a;
+  --md-sys-color-on-surface: #111827;
+  --md-sys-color-on-surface-variant: #3f4147;
+  --md-sys-color-outline: #d1d5db;
+  --md-sys-color-outline-variant: #e5e7eb;
+}
+
+/* ─── Theme: Amber (dark) ───────────────────────────────── */
+:root[theme="amber-dark"] {
+  --md-sys-color-primary: #fbbf24;
+  --md-sys-color-primary-hover: #fcd34d;
+  --md-sys-color-on-primary: #78350f;
+  --md-sys-color-primary-container: #92400e;
+  --md-sys-color-on-primary-container: #fde68a;
+  --md-sys-color-secondary: #fbbf24;
+  --md-sys-color-on-secondary: #78350f;
+  --md-sys-color-secondary-container: #92400e;
+  --md-sys-color-on-secondary-container: #fde68a;
+  --md-sys-color-tertiary: #9ca3af;
+  --md-sys-color-on-tertiary: #111827;
+  --md-sys-color-tertiary-container: #1f2937;
+  --md-sys-color-on-tertiary-container: #d1d5db;
+  --md-sys-color-surface: #131313;
+  --md-sys-color-surface-variant: #161616;
+  --md-sys-color-surface-container: #1a1a1a;
+  --md-sys-color-surface-container-low: #141414;
+  --md-sys-color-surface-container-highest: #262626;
+  --md-sys-color-on-surface: #f9fafb;
+  --md-sys-color-on-surface-variant: #d4dae2;
+  --md-sys-color-outline: #374151;
+  --md-sys-color-outline-variant: #1f2937;
+}
+
+/* ─── Theme transition ───────────────────────────────────── */
+*, *::before, *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Exclude elements where transition would look wrong */
+*:where(
+  [class*="material-symbols"],
+  m3-button,
+  m3-switch,
+  m3-slider,
+  m3-progress,
+  m3-loading-indicator
+) {
+  transition: none;
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); margin-bottom: 0.75rem; }
+h2 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); margin-top: 1.5rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+ul, ol {
+  margin: 0.75rem 0;
+  padding-inline-start: 1.5rem;
+}
+
+li { line-height: 1.7; }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface-container);
+  padding: 2px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+/* ─── Material Symbols ───────────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  /* Hide icon text until font is loaded to prevent FOUT */
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Disable tap highlight and text selection on interactive elements */
+button,
+a,
+[role="button"],
+m3-button,
+m3-navigation-rail-item,
+m3-navigation-rail-toggle,
+m3-menu-item,
+m3-fab,
+m3-switch,
+m3-checkbox,
+m3-radio-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Once the font is available the browser applies it and we fade in */
+.fonts-loaded .material-symbols-outlined,
+:root.fonts-loaded .material-symbols-outlined {
+  opacity: 1;
+}
+
+/* Fallback: show after 1s regardless, so icons never stay invisible */
+@keyframes icons-reveal {
+  to { opacity: 1; }
+}
+
+.material-symbols-outlined {
+  animation: icons-reveal 0s 1s forwards;
+}
+
+/* ─── Docs page layout ───────────────────────────────────── */
+.docs-page .page-header {
+  margin-bottom: clamp(12px, 2vw, 20px);
+  padding-bottom: clamp(12px, 2vw, 20px);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.docs-page .page-header h1 {
+  margin: 0;
+  font-size: clamp(1.375rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.docs-page .subtitle,
+.docs-page .page-header > p {
+  margin: 0.5rem 0 0;
+  max-width: 75ch;
+  font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+  line-height: 1.7;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Demo sections */
+.docs-page :is(.demo-section, .section, .doc-section) {
+  margin-top: clamp(16px, 2.5vw, 24px);
+  padding: clamp(16px, 2vw, 22px);
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 12px;
+}
+
+.docs-page :is(.demo-section, .section, .doc-section):first-of-type {
+  margin-top: 0;
+}
+
+.docs-page :is(.demo-section, .section, .doc-section) h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+}
+
+.docs-page :is(.demo-section, .section, .doc-section) > p:first-of-type,
+.docs-page .section-description {
+  margin-bottom: 1rem;
+  max-width: 72ch;
+}
+
+/* Variant / pattern cards */
+.docs-page :is(.variant-card, .pattern-card, .interactive-demo) {
+  margin-top: 0.875rem;
+  padding: clamp(14px, 1.5vw, 18px);
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 10px;
+}
+
+.docs-page .variant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.docs-page .variant-header h3,
+.docs-page .pattern-card h4 {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.docs-page :is(.demo-row, .demo-buttons, .button-group) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 0.875rem;
+}
+
+.docs-page .feature-list {
+  margin: 0.75rem 0 0;
+}
+
+.docs-page .feature-list li + li {
+  margin-top: 0.375rem;
+}
+
+.docs-page .accessibility .feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.docs-page .accessibility .feature-list li {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 8px;
+}
+
+.docs-page .accessibility .feature-list li + li {
+  margin-top: 0.5rem;
+}
+
+.docs-page .accessibility .feature-list strong {
+  color: var(--md-sys-color-primary);
+}
+
+.docs-page .code-sample {
+  margin-top: 0.875rem;
+  border-radius: 10px;
+}
+
+/* ─── Shared page section pattern ───────────────────────── */
+/* Used by quick-start, contact, and similar content pages   */
+.page-section {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  max-width: 760px;
+}
+
+.page-section:last-child {
+  border-bottom: none;
+}
+
+.page-section h2,
+.comp-section h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--md-sys-color-on-surface-variant);
+  margin: 0 0 12px;
+}
+
+.page-section > p {
+  font-size: 0.9375rem;
+  color: var(--md-sys-color-on-surface-variant);
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+
+.page-section > p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .page-section {
+    padding: 18px 0;
+  }
+}
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.875rem;
+  align-items: center;
+}

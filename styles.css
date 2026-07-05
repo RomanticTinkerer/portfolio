@@ -1,0 +1,1108 @@
+/* ===================================================
+   Animesh Portfolio — Google Pixel / Material You
+   ===================================================
+   M3 Expressive shapes + Material You tonal surfaces
+   =================================================== */
+
+/* ── Material You Tonal Palette — Blue seed ────── */
+:root,
+[data-theme="dark"] {
+  /* Surface hierarchy */
+  --surface:                 #111318;
+  --surface-dim:             #111318;
+  --surface-bright:          #37393e;
+  --surface-container-lowest:#0c0e13;
+  --surface-container-low:   #1b1c22;
+  --surface-container:       #1f2127;
+  --surface-container-high:  #2a2c31;
+  --surface-container-highest:#35363c;
+
+  /* Content */
+  --on-surface:              #e3e2e6;
+  --on-surface-variant:      #c4c6d0;
+
+  /* Primary */
+  --primary:                 #a8c8ff;
+  --on-primary:              #003062;
+  --primary-container:       #00468a;
+  --on-primary-container:    #d6e3ff;
+
+  /* Secondary */
+  --secondary:               #bbc7db;
+  --secondary-container:     #3c4858;
+  --on-secondary-container:  #d7e3f7;
+
+  /* Tertiary */
+  --tertiary:                #d5bee5;
+  --tertiary-container:      #4e3a5e;
+  --on-tertiary-container:   #f1dbff;
+
+  /* Outline */
+  --outline:                 #8e9099;
+  --outline-variant:         #44474e;
+
+  /* Surface tint */
+  --surface-tint:            #a8c8ff;
+
+  /* Aliases */
+  --bg-primary:              var(--surface);
+  --bg-card:                 var(--surface-container);
+  --text-primary:            var(--on-surface);
+  --text-secondary:          var(--on-surface-variant);
+  --text-tertiary:           var(--outline);
+  --accent:                  var(--primary);
+  --accent-container:        var(--primary-container);
+  --on-accent-container:     var(--on-primary-container);
+  --border:                  var(--outline-variant);
+
+  /* Shapes — tonal fills */
+  --shape-fill-1:            rgba(168, 200, 255, 0.06);
+  --shape-fill-2:            rgba(213, 190, 229, 0.05);
+  --shape-fill-3:            rgba(168, 200, 255, 0.04);
+  --shape-icon-bg:           var(--primary-container);
+  --shape-icon-fg:           var(--on-primary-container);
+
+  /* Dock */
+  --dock-bg:                 rgba(31, 33, 39, 0.92);
+  --dock-border:             var(--outline-variant);
+  --dock-item-hover:         rgba(168, 200, 255, 0.08);
+  --dock-item-active-bg:     var(--primary-container);
+  --dock-item-active-text:   var(--on-primary-container);
+  --dock-divider:            var(--outline-variant);
+  --dock-shadow:             0 2px 16px rgba(0,0,0,0.40);
+
+  /* Typography */
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* M3 shape scale */
+  --shape-xs:  4px;
+  --shape-sm:  8px;
+  --shape-md:  12px;
+  --shape-lg:  16px;
+  --shape-xl:  28px;
+  --shape-full:9999px;
+
+  /* M3 motion */
+  --m3-standard:   cubic-bezier(0.2, 0, 0, 1);
+  --m3-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --dur-short:     200ms;
+  --dur-medium:    300ms;
+  --dur-long:      500ms;
+
+  /* Theme icon */
+  --sun-opacity: 1;  --moon-opacity: 0;
+  --sun-scale: 1;    --moon-scale: 0.5;
+}
+
+/* ── Light Theme ───────────────────────────── */
+[data-theme="light"] {
+  --surface:                 #faf8ff;
+  --surface-dim:             #dbd9e0;
+  --surface-bright:          #faf8ff;
+  --surface-container-lowest:#ffffff;
+  --surface-container-low:   #f4f2f9;
+  --surface-container:       #eeedf4;
+  --surface-container-high:  #e8e7ef;
+  --surface-container-highest:#e3e1e9;
+
+  --on-surface:              #1b1b1f;
+  --on-surface-variant:      #44474e;
+
+  --primary:                 #005fae;
+  --on-primary:              #ffffff;
+  --primary-container:       #d5e3ff;
+  --on-primary-container:    #001b3c;
+
+  --secondary:               #545f70;
+  --secondary-container:     #d8e3f7;
+  --on-secondary-container:  #111c2b;
+
+  --tertiary:                #6d5677;
+  --tertiary-container:      #f6d9ff;
+  --on-tertiary-container:   #260f31;
+
+  --outline:                 #74777f;
+  --outline-variant:         #c4c6d0;
+
+  --surface-tint:            #005fae;
+
+  --shape-fill-1:            rgba(0, 95, 174, 0.06);
+  --shape-fill-2:            rgba(109, 86, 119, 0.05);
+  --shape-fill-3:            rgba(0, 95, 174, 0.04);
+  --shape-icon-bg:           var(--primary-container);
+  --shape-icon-fg:           var(--on-primary-container);
+
+  --dock-bg:                 rgba(238, 237, 244, 0.92);
+  --dock-border:             var(--outline-variant);
+  --dock-item-hover:         rgba(0, 95, 174, 0.06);
+  --dock-item-active-bg:     var(--primary-container);
+  --dock-item-active-text:   var(--on-primary-container);
+  --dock-divider:            var(--outline-variant);
+  --dock-shadow:             0 1px 8px rgba(0,0,0,0.08);
+
+  --sun-opacity: 0;  --moon-opacity: 1;
+  --sun-scale: 0.5;  --moon-scale: 1;
+}
+
+/* ===================================================
+   Reset & Base
+   =================================================== */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background var(--dur-medium) var(--m3-standard),
+              color var(--dur-medium) var(--m3-standard);
+}
+
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 22px;
+  vertical-align: middle;
+  user-select: none;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur-short) ease;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===================================================
+   AMBIENT FLOATING SHAPES — M3 Expressive
+   Scattered organic shapes as page ambiance
+   =================================================== */
+
+.ambient-shapes {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-shape {
+  position: absolute;
+  opacity: 0.5;
+  transition: background var(--dur-medium) var(--m3-standard);
+}
+
+/* Shape 1: Large soft clover — top right */
+.shape-1 {
+  width: 180px;
+  height: 180px;
+  top: 5%;
+  right: 8%;
+  background: var(--shape-fill-1);
+  clip-path: url(#shape-clover);
+  animation: floatSlow 20s ease-in-out infinite;
+}
+
+/* Shape 2: Medium hex — left middle */
+.shape-2 {
+  width: 120px;
+  height: 120px;
+  top: 35%;
+  left: 3%;
+  background: var(--shape-fill-2);
+  clip-path: url(#shape-hex);
+  animation: floatSlow 25s ease-in-out infinite reverse;
+}
+
+/* Shape 3: Small rounded triangle — bottom right */
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 25%;
+  right: 5%;
+  background: var(--shape-fill-1);
+  clip-path: url(#shape-triangle);
+  animation: floatSlow 18s ease-in-out infinite;
+}
+
+/* Shape 4: Small scallop — top left */
+.shape-4 {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  left: 12%;
+  background: var(--shape-fill-3);
+  clip-path: url(#shape-scallop);
+  animation: floatSlow 22s ease-in-out infinite reverse;
+}
+
+/* Shape 5: Medium petal — bottom left */
+.shape-5 {
+  width: 100px;
+  height: 100px;
+  bottom: 15%;
+  left: 6%;
+  background: var(--shape-fill-2);
+  clip-path: url(#shape-petal);
+  animation: floatSlow 24s ease-in-out infinite;
+}
+
+/* Shape 6: Small star — right middle */
+.shape-6 {
+  width: 50px;
+  height: 50px;
+  top: 60%;
+  right: 10%;
+  background: var(--shape-fill-3);
+  clip-path: url(#shape-star6);
+  animation: floatSlow 16s ease-in-out infinite reverse;
+}
+
+/* Shape 7: Medium clover — top center */
+.shape-7 {
+  width: 110px;
+  height: 110px;
+  top: 8%;
+  left: 45%;
+  background: var(--shape-fill-2);
+  clip-path: url(#shape-clover);
+  animation: floatSlow 22s ease-in-out infinite;
+}
+
+/* Shape 8: Large hex — bottom right */
+.shape-8 {
+  width: 150px;
+  height: 150px;
+  bottom: 8%;
+  right: 20%;
+  background: var(--shape-fill-1);
+  clip-path: url(#shape-hex);
+  animation: floatSlow 28s ease-in-out infinite reverse;
+}
+
+/* Shape 9: Medium scallop — middle right */
+.shape-9 {
+  width: 90px;
+  height: 90px;
+  top: 45%;
+  right: 4%;
+  background: var(--shape-fill-2);
+  clip-path: url(#shape-scallop);
+  animation: floatSlow 19s ease-in-out infinite;
+}
+
+/* Shape 10: Small petal — bottom center */
+.shape-10 {
+  width: 70px;
+  height: 70px;
+  bottom: 38%;
+  left: 38%;
+  background: var(--shape-fill-3);
+  clip-path: url(#shape-petal);
+  animation: floatSlow 21s ease-in-out infinite reverse;
+}
+
+/* Shape 11: Large star — top left corner */
+.shape-11 {
+  width: 130px;
+  height: 130px;
+  top: 28%;
+  left: 22%;
+  background: var(--shape-fill-1);
+  clip-path: url(#shape-star6);
+  animation: floatSlow 26s ease-in-out infinite;
+}
+
+/* Shape 12: Small triangle — middle left */
+.shape-12 {
+  width: 65px;
+  height: 65px;
+  top: 65%;
+  left: 15%;
+  background: var(--shape-fill-2);
+  clip-path: url(#shape-triangle);
+  animation: floatSlow 17s ease-in-out infinite reverse;
+}
+
+/* Shape 13: Medium clover — bottom left corner */
+.shape-13 {
+  width: 100px;
+  height: 100px;
+  bottom: 5%;
+  left: 25%;
+  background: var(--shape-fill-1);
+  clip-path: url(#shape-clover);
+  animation: floatSlow 23s ease-in-out infinite;
+}
+
+/* Shape 14: Small hex — top right center */
+.shape-14 {
+  width: 85px;
+  height: 85px;
+  top: 22%;
+  right: 28%;
+  background: var(--shape-fill-3);
+  clip-path: url(#shape-hex);
+  animation: floatSlow 20s ease-in-out infinite reverse;
+}
+
+/* Shape 15: Medium scallop — lower center right */
+.shape-15 {
+  width: 105px;
+  height: 105px;
+  bottom: 50%;
+  right: 25%;
+  background: var(--shape-fill-2);
+  clip-path: url(#shape-scallop);
+  animation: floatSlow 24s ease-in-out infinite;
+}
+
+/* Shape 16: Small star — far bottom left */
+.shape-16 {
+  width: 55px;
+  height: 55px;
+  bottom: 18%;
+  left: 2%;
+  background: var(--shape-fill-1);
+  clip-path: url(#shape-star6);
+  animation: floatSlow 15s ease-in-out infinite reverse;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%      { transform: translateY(-12px) rotate(3deg); }
+  50%      { transform: translateY(-6px) rotate(-2deg); }
+  75%      { transform: translateY(-16px) rotate(4deg); }
+}
+
+/* ===================================================
+   SECTION ICON SHAPES — uniform Pixel-style squircle
+   =================================================== */
+
+.section-shape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--shape-md);
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  flex-shrink: 0;
+  transition: background var(--dur-medium) var(--m3-standard),
+              color var(--dur-medium) var(--m3-standard),
+              transform var(--dur-short) var(--m3-standard);
+}
+
+.section-shape .material-symbols-rounded {
+  font-size: 18px;
+  color: inherit;
+}
+
+.section-shape:hover {
+  transform: scale(1.08);
+}
+
+/* ===================================================
+   Page wrapper
+   =================================================== */
+
+.page-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 24px 140px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Desktop layout — on mobile these just stack naturally */
+.desktop-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================================================
+   DESKTOP — two-column split + projects grid
+   =================================================== */
+
+@media (min-width: 900px) {
+  .page-wrapper {
+    max-width: 1100px;
+    padding: 48px 40px 140px;
+  }
+
+  /* Two-column layout for homepage */
+  .desktop-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* Left column sticks while right column scrolls */
+  .desktop-left {
+    position: sticky;
+    top: 48px;
+  }
+
+  /* Hero card adapts to vertical layout on desktop left */
+  .desktop-left .hero {
+    margin-bottom: 0;
+  }
+
+  .desktop-left .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+
+  /* Projects page — 2-column card grid */
+  .projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-wrapper {
+    max-width: 1200px;
+  }
+
+  .desktop-layout {
+    grid-template-columns: 380px 1fr;
+    gap: 52px;
+  }
+}
+
+/* ===================================================
+   Scroll-reveal
+   =================================================== */
+
+.hero,
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--dur-long) var(--m3-emphasized),
+              transform var(--dur-long) var(--m3-emphasized);
+}
+
+.hero.visible,
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================================
+   HERO — with decorative shapes
+   =================================================== */
+
+.hero {
+  margin-bottom: 48px;
+  padding: 28px;
+  background: var(--bg-card);
+  border-radius: var(--shape-xl);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--dur-medium) var(--m3-standard);
+}
+
+/* Decorative shapes inside hero card */
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-shape {
+  position: absolute;
+  transition: background var(--dur-medium) var(--m3-standard);
+}
+
+.hero-shape-1 {
+  width: 120px;
+  height: 120px;
+  top: -30px;
+  right: -20px;
+  background: var(--shape-fill-1);
+  clip-path: url(#shape-clover);
+  opacity: 0.7;
+  animation: floatSlow 15s ease-in-out infinite;
+}
+
+.hero-shape-2 {
+  width: 70px;
+  height: 70px;
+  bottom: -15px;
+  right: 60px;
+  background: var(--shape-fill-2);
+  clip-path: url(#shape-hex);
+  opacity: 0.5;
+  animation: floatSlow 20s ease-in-out infinite reverse;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-avatar-wrap {
+  flex-shrink: 0;
+}
+
+/* Squircle avatar — Pixel adaptive-icon shape */
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 26%;
+  transition: transform var(--dur-medium) var(--m3-emphasized);
+}
+
+.hero-avatar:hover {
+  transform: scale(1.04);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.85rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ===================================================
+   SECTION COMMON
+   =================================================== */
+
+.section {
+  margin-bottom: 44px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 2px;
+}
+
+.section-title::before {
+  display: none;
+}
+
+/* ===================================================
+   ABOUT — M3 Filled Card
+   =================================================== */
+
+.about-card-wrap m3-card {
+  --md-sys-color-surface-container-highest: var(--bg-card);
+  --md-card-container-shape: var(--shape-xl);
+  --md-sys-color-on-surface: var(--text-primary);
+}
+
+.about-text {
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  padding: 4px 0;
+}
+
+.inline-link {
+  font-weight: 600;
+  color: var(--accent);
+}
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+/* ===================================================
+   EDUCATION — circle logo
+   =================================================== */
+
+.education-card-wrap m3-card {
+  --md-sys-color-surface-container-highest: var(--bg-card);
+  --md-card-container-shape: var(--shape-xl);
+  --md-sys-color-on-surface: var(--text-primary);
+}
+
+.edu-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+/* Education logo formatted as a clean circle */
+.edu-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--outline-variant);
+}
+
+.edu-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.edu-school {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.edu-meta {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+.edu-date {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+/* ===================================================
+   SKILLS — M3 Chips
+   =================================================== */
+
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-chips m3-chip {
+  --md-sys-color-outline: var(--outline-variant);
+  --md-sys-color-on-surface: var(--text-primary);
+  --md-sys-color-on-surface-variant: var(--text-secondary);
+  --md-sys-color-surface-container-low: var(--surface-container-low);
+  font-family: var(--font-body);
+  transition: transform var(--dur-short) var(--m3-standard);
+}
+
+.skills-chips m3-chip:hover {
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   CONTACT CTA
+   =================================================== */
+
+.contact-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border-radius: var(--shape-xl);
+  transition: background var(--dur-medium) var(--m3-standard),
+              transform var(--dur-short) var(--m3-standard);
+}
+
+.contact-banner:hover {
+  transform: translateY(-1px);
+}
+
+.contact-text {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.contact-link {
+  font-weight: 600;
+  color: var(--accent);
+}
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* ===================================================
+   BOTTOM DOCK — Pixel Launcher pill
+   =================================================== */
+
+.dock {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  animation: dockReveal var(--dur-long) var(--m3-emphasized) 0.2s both;
+}
+
+@keyframes dockReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dock-inner {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  background: var(--dock-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--dock-border);
+  border-radius: var(--shape-full);
+  box-shadow: var(--dock-shadow);
+  transition: background var(--dur-medium) var(--m3-standard),
+              border-color var(--dur-medium) var(--m3-standard),
+              box-shadow var(--dur-medium) var(--m3-standard);
+}
+
+.dock-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dock-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--dock-divider);
+  margin: 0 6px;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  padding: 6px 14px;
+  border-radius: var(--shape-lg);
+  color: var(--text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  background: none;
+  border: none;
+  font: inherit;
+  outline: none;
+  transition: color var(--dur-short) var(--m3-standard),
+              background var(--dur-short) var(--m3-standard),
+              transform var(--dur-short) var(--m3-standard);
+}
+
+.dock-item:hover {
+  color: var(--text-primary);
+  background: var(--dock-item-hover);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.dock-item:active {
+  transform: scale(0.96);
+}
+
+.dock-item.active {
+  color: var(--dock-item-active-text);
+  background: var(--dock-item-active-bg);
+}
+
+.dock-item svg,
+.dock-item > .material-symbols-rounded {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.dock-label {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.dock-item:hover .dock-label {
+  opacity: 1;
+}
+
+/* Theme toggle icon morph */
+.dock-theme-toggle {
+  position: relative;
+  padding-top: 6px;
+  min-width: 48px;
+  min-height: 48px;
+}
+
+.dock-theme-toggle .icon-sun,
+.dock-theme-toggle .icon-moon {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transition: opacity var(--dur-medium) var(--m3-standard),
+              transform var(--dur-medium) var(--m3-emphasized);
+}
+
+.dock-theme-toggle .icon-sun {
+  opacity: var(--sun-opacity);
+  transform: translateX(-50%) scale(var(--sun-scale));
+}
+
+.dock-theme-toggle .icon-moon {
+  opacity: var(--moon-opacity);
+  transform: translateX(-50%) scale(var(--moon-scale));
+}
+
+.dock-theme-toggle .dock-label {
+  margin-top: 20px;
+}
+
+/* ===================================================
+   RESPONSIVE
+   =================================================== */
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 24px 16px 130px;
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .hero-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .edu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 18px;
+  }
+
+  /* Ambient shapes — hide on mobile */
+  .ambient-shapes {
+    display: none;
+  }
+
+  .dock {
+    bottom: 10px;
+    max-width: calc(100vw - 16px);
+  }
+
+  .dock-inner {
+    padding: 5px 7px;
+    gap: 1px;
+  }
+
+  .dock-item {
+    padding: 5px 10px;
+    border-radius: var(--shape-md);
+  }
+
+  .dock-label {
+    font-size: 0.5rem;
+  }
+
+  .dock-divider {
+    height: 20px;
+    margin: 0 3px;
+  }
+
+  /* Projects page mobile */
+  .project-card {
+    border-radius: var(--shape-lg) !important;
+  }
+}
+
+/* ===================================================
+   PROJECTS PAGE
+   =================================================== */
+
+/* Projects hero — compact version */
+.projects-hero {
+  padding: 24px 28px;
+  margin-bottom: 36px;
+}
+
+.projects-hero .hero-title {
+  font-size: 1.5rem;
+}
+
+/* Grid layout */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Project card */
+.project-card {
+  background: var(--surface-container);
+  border-radius: var(--shape-xl);
+  overflow: hidden;
+  transition: background var(--dur-medium) var(--m3-standard),
+              transform var(--dur-short) var(--m3-standard),
+              box-shadow var(--dur-short) var(--m3-standard);
+  /* Scroll-reveal */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--dur-long) var(--m3-emphasized),
+              transform var(--dur-long) var(--m3-emphasized),
+              background var(--dur-medium) var(--m3-standard),
+              box-shadow var(--dur-short) var(--m3-standard);
+}
+
+/* Stagger each card's reveal */
+.project-card:nth-child(1) { transition-delay: 0.05s; }
+.project-card:nth-child(2) { transition-delay: 0.10s; }
+.project-card:nth-child(3) { transition-delay: 0.15s; }
+.project-card:nth-child(4) { transition-delay: 0.20s; }
+.project-card:nth-child(5) { transition-delay: 0.25s; }
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image placeholder area */
+.project-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-container-high);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur-medium) var(--m3-standard);
+}
+
+.placeholder-icon {
+  font-size: 48px;
+  color: var(--outline);
+  opacity: 0.35;
+}
+
+/* Card content */
+.project-content {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--on-surface);
+  letter-spacing: -0.01em;
+}
+
+.project-status-chip {
+  --md-sys-color-outline: var(--outline-variant);
+  font-size: 0.72rem;
+}
+
+.project-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--on-surface-variant);
+}
+
+.project-desc .inline-link {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Tech tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.project-tags m3-chip {
+  --md-sys-color-outline: var(--outline-variant);
+  --md-sys-color-on-surface: var(--on-surface);
+  --md-sys-color-on-surface-variant: var(--on-surface-variant);
+  --md-sys-color-surface-container-low: var(--surface-container-low);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+}

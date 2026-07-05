@@ -1,0 +1,146 @@
+/* ─── Section groups ─────────────────────────────────────── */
+.comp-section {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.comp-section:last-child {
+  border-bottom: none;
+}
+
+.comp-section h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--md-sys-color-on-surface-variant);
+  margin: 0 0 12px;
+}
+
+@media (max-width: 600px) {
+  .comp-section {
+    padding: 18px 0;
+  }
+}
+
+/* ─── Table ──────────────────────────────────────────────── */
+.comp-table {
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 12px;
+  /* use clip-path instead of overflow:hidden so badge indicators aren't clipped */
+  clip-path: inset(0 round 12px);
+  min-width: 0;
+  width: 100%;
+}
+
+.comp-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 280px) 32px;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  cursor: pointer;
+  transition: background 0.15s;
+  min-width: 0;
+}
+
+.comp-table > :last-child .comp-row {
+  border-bottom: none;
+}
+
+.comp-row:hover {
+  background: var(--md-sys-color-surface-container-low);
+}
+
+.comp-row:hover .comp-arrow {
+  --md-sys-color-on-surface-variant: var(--md-sys-color-primary);
+  transform: translateX(2px);
+}
+
+/* ─── Info column ────────────────────────────────────────── */
+.comp-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.comp-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--md-sys-color-on-surface);
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.comp-desc {
+  font-size: 0.8125rem;
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.4;
+  min-width: 0;
+}
+
+/* ─── Preview column ─────────────────────────────────────── */
+.comp-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.comp-preview--wide m3-slider,
+.comp-preview--wide m3-text-field,
+.comp-preview--wide m3-progress,
+.comp-preview--wide m3-tabs {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  display: block;
+}
+
+/* badge indicators render above the element — give vertical breathing room */
+.comp-preview--badge {
+  padding-top: 12px;
+  align-items: flex-end;
+}
+
+.comp-note {
+  font-size: 0.75rem;
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.7;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* ─── Arrow ──────────────────────────────────────────────── */
+.comp-arrow {
+  --md-sys-color-on-surface-variant: var(--md-sys-color-outline);
+  transition: transform 0.15s;
+  flex-shrink: 0;
+  justify-self: end;
+}
+
+/* ─── Tablet: hide preview to avoid squeeze ─────────────── */
+@media (max-width: 768px) {
+  .comp-row {
+    grid-template-columns: minmax(0, 1fr) 32px;
+  }
+
+  .comp-preview {
+    display: none;
+  }
+}
+
+/* ─── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .comp-row {
+    gap: 4px 8px;
+    padding: 11px 14px;
+  }
+}
