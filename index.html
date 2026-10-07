@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animesh — Portfolio</title>
-  <meta name="description" content="Animesh's portfolio — open-source contributor, tech tinkerer, and builder of cool stuff on Android and GNU/Linux." />
-  <meta name="author" content="Animesh" />
+  <title>Animesh Singh — Portfolio</title>
+  <meta name="description" content="Animesh Singh, a student developer building open-source software for GNU/Linux and Android." />
+  <meta name="author" content="Animesh Singh" />
 
   <!-- Fonts + Material Symbols -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -95,9 +95,9 @@
             </div>
 
             <div class="hero-text">
-              <h1 class="hero-title" id="hero-title">Hi, I'm Animesh!</h1>
+              <h1 class="hero-title" id="hero-title">Hi, I'm Animesh Singh!</h1>
               <p class="hero-subtitle" id="hero-subtitle">
-                I explore and contribute to open-source while creating and exploring cool stuff
+                I build software for systems I actually care about — GNU/Linux, Android, and open-source tools that leave control on the machine.
               </p>
             </div>
           </div>
@@ -106,6 +106,32 @@
 
       <!-- RIGHT COLUMN — Details -->
       <div class="desktop-right">
+        <!-- RECOGNITION -->
+        <section class="section recognition-section" id="recognition-section">
+          <h2 class="section-title">
+            <span class="section-shape">
+              <span class="material-symbols-rounded">emoji_events</span>
+            </span>
+            Recognition
+          </h2>
+          <div class="education-card-wrap">
+            <m3-card variant="filled" width="full">
+              <div class="edu-item" id="achievement-hidden-prompt">
+                <img
+                  src="public/xavier.png"
+                  alt="Xavier University"
+                  class="achievement-logo"
+                />
+                <div class="edu-details">
+                  <h3 class="edu-school">Top 25 Nationwide — Hidden Prompt 2026</h3>
+                  <p class="edu-meta">Xavier University, USA · 2026</p>
+                  <p class="edu-date">Ranked among the Top 25 nationwide in Hidden Prompt 2026.</p>
+                </div>
+              </div>
+            </m3-card>
+          </div>
+        </section>
+
         <!-- ABOUT SECTION -->
         <section class="section about-section" id="about-section">
           <h2 class="section-title">
@@ -117,11 +143,11 @@
           <div class="about-card-wrap">
             <m3-card variant="filled" width="full">
               <p class="about-text" id="about-text">
-                Hi, I'm Animesh. I build and explore open-source. I contribute by creating
-                Open-Source applications on Android and GNU/Linux. I am a tech tinkerer and a
-                person of many waters. I also write on
-                <a href="https://romantictinkerer.medium.com" target="_blank" rel="noopener noreferrer" class="inline-link">Medium</a>,
-                while being a 16 year old.
+                I publish as RomanticTinkerer. I am a high-school student in Lucknow, building open-source software for GNU/Linux and Android: how software gets installed, how a focus session is enforced, and what stays on the device. I have also spent time in AOSP-based systems, custom ROMs, and recovery tools such as TWRP and OrangeFox. I write
+                <a href="https://dev.to/romantictinkerer" target="_blank" rel="noopener noreferrer" class="inline-link">essays</a>
+                and
+                <a href="https://medium.com/@RomanticTinkerer" target="_blank" rel="noopener noreferrer" class="inline-link">poems</a>,
+                and I do theatre.
               </p>
             </m3-card>
           </div>
@@ -145,8 +171,8 @@
                 />
                 <div class="edu-details">
                   <h3 class="edu-school">City Montessori School</h3>
-                  <p class="edu-meta">High School Diploma</p>
-                  <p class="edu-date">March 2024 — April 2028</p>
+                  <p class="edu-meta">ISC · in progress</p>
+                  <p class="edu-date">2024 — 2028 · Lucknow, India</p>
                 </div>
               </div>
             </m3-card>
@@ -161,23 +187,41 @@
             </span>
             Skills
           </h2>
+          <p class="skill-label">Languages</p>
           <div class="skills-chips" id="skills-chips">
-            <m3-chip variant="assist" id="skill-python">
-              <svg slot="icon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M9.585 11.692h4.328s2.432.039 2.432-2.35V5.391S16.714 3 11.936 3C7.362 3 7.647 4.868 7.647 4.868l.006 1.97h4.351v.592H6.655S4 7.089 4 11.752s2.317 4.503 2.317 4.503h1.384v-2.166s-.075-2.317 2.279-2.317l-.001-.08zm-.27-4.558a.77.77 0 1 1 0-1.54.77.77 0 0 1 0 1.54z"/><path fill="currentColor" d="M14.463 12.308H10.14s-2.432-.039-2.432 2.35v3.951S7.338 21 12.116 21c4.574 0 4.289-1.868 4.289-1.868l-.006-1.97h-4.351v-.592h5.349S20 16.911 20 12.248s-2.317-4.503-2.317-4.503h-1.384v2.166s.075 2.317-2.279 2.317l.001.08h.442zm.27 4.558a.77.77 0 1 1 0 1.54.77.77 0 0 1 0-1.54z"/></svg>
-              Python
-            </m3-chip>
-            <m3-chip variant="assist" id="skill-bash">
-              <svg slot="icon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4zm0-2h16V8H4v10zm4-1h6v-2H8v2zM5 13l3-3-3-3-1 1 2 2-2 2 1 1z"/></svg>
-              Bash
-            </m3-chip>
-            <m3-chip variant="assist" id="skill-csharp">
-              <svg slot="icon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M11.5 15.97l.41 2.44c-.26.14-.68.27-1.24.39-.57.13-1.24.2-2.01.2-2.21-.04-3.87-.7-4.98-1.96C2.56 15.77 2 14.16 2 12.21c.05-2.31.72-4.08 2-5.32C5.32 5.64 6.96 5 8.94 5c.75 0 1.4.07 1.94.19s.94.25 1.2.4l-.58 2.49-1.06-.34c-.4-.1-.86-.15-1.39-.15-1.16-.01-2.12.36-2.87 1.1-.76.73-1.15 1.85-1.18 3.34 0 1.36.37 2.42 1.08 3.2.71.77 1.71 1.17 2.99 1.18l1.33-.12c.43-.08.79-.19 1.1-.32zm5.5 0l.41 2.44c-.26.14-.68.27-1.24.39-.57.13-1.24.2-2.01.2-2.21-.04-3.87-.7-4.98-1.96C8.06 15.77 7.5 14.16 7.5 12.21c.05-2.31.72-4.08 2-5.32C10.82 5.64 12.46 5 14.44 5c.75 0 1.4.07 1.94.19s.94.25 1.2.4l-.58 2.49-1.06-.34c-.4-.1-.86-.15-1.39-.15-1.16-.01-2.12.36-2.87 1.1-.76.73-1.15 1.85-1.18 3.34 0 1.36.37 2.42 1.08 3.2.71.77 1.71 1.17 2.99 1.18l1.33-.12c.43-.08.79-.19 1.1-.32z"/></svg>
-              C#
-            </m3-chip>
-            <m3-chip variant="assist" id="skill-gdscript">
-              <svg slot="icon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.5 4.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM8 13s1.5 2 4 2 4-2 4-2v1s-1.5 2.5-4 2.5S8 14 8 14v-1z"/></svg>
-              GDScript
-            </m3-chip>
+            <m3-chip variant="assist">Python</m3-chip>
+            <m3-chip variant="assist">C</m3-chip>
+            <m3-chip variant="assist">C++</m3-chip>
+            <m3-chip variant="assist">Shell</m3-chip>
+          </div>
+          <p class="skill-label">Systems</p>
+          <div class="skills-chips">
+            <m3-chip variant="assist">GNU/Linux</m3-chip>
+            <m3-chip variant="assist">systemd</m3-chip>
+            <m3-chip variant="assist">D-Bus</m3-chip>
+            <m3-chip variant="assist">Polkit</m3-chip>
+            <m3-chip variant="assist">PipeWire</m3-chip>
+          </div>
+          <p class="skill-label">Applications</p>
+          <div class="skills-chips">
+            <m3-chip variant="assist">PyQt6</m3-chip>
+            <m3-chip variant="assist">GTK 4</m3-chip>
+            <m3-chip variant="assist">Qt 6</m3-chip>
+          </div>
+        </section>
+
+        <!-- WRITING -->
+        <section class="section writing-section" id="writing-section">
+          <h2 class="section-title">
+            <span class="section-shape">
+              <span class="material-symbols-rounded">edit_note</span>
+            </span>
+            Writing
+          </h2>
+          <div class="about-card-wrap">
+            <m3-card variant="filled" width="full">
+              <ul class="writing-list" id="writing-list"></ul>
+            </m3-card>
           </div>
         </section>
 
@@ -188,8 +232,10 @@
               <span class="material-symbols-rounded">forum</span>
             </span>
             <p class="contact-text">
-              If you wish to contact me or ask me questions,
-              <a href="https://discord.gg/9F7WXUARYn" target="_blank" rel="noopener noreferrer" class="contact-link" id="discord-link">join my Discord Server!</a>
+              Email
+              <a href="mailto:animeshrocking14@gmail.com" class="contact-link">animeshrocking14@gmail.com</a>,
+              or
+              <a href="https://discord.gg/9F7WXUARYn" target="_blank" rel="noopener noreferrer" class="contact-link" id="discord-link">join my Discord server</a>.
             </p>
           </div>
         </section>
@@ -290,6 +336,31 @@
         root.setAttribute('data-theme', next);
         localStorage.setItem(STORAGE_KEY, next);
       });
+    })();
+
+    // Latest Medium posts, via RSS. Each item is the post title.
+    (() => {
+      const list = document.getElementById('writing-list');
+      if (!list) return;
+      const feed = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@RomanticTinkerer');
+
+      fetch(feed)
+        .then((response) => response.json())
+        .then((data) => {
+          (data.items || []).slice(0, 5).forEach((item) => {
+            const title = String(item.title || '').replace(/\s+/g, ' ').trim();
+            if (!title) return;
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = String(item.link || '').split('?')[0];
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = title;
+            li.appendChild(a);
+            list.appendChild(li);
+          });
+        })
+        .catch(() => {});
     })();
   </script>
 </body>

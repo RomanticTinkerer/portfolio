@@ -679,6 +679,17 @@ a:hover {
   border: 2px solid var(--outline-variant);
 }
 
+.achievement-logo {
+  width: 132px;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 8px;
+  border: 1px solid var(--outline-variant);
+}
+
 .edu-details {
   display: flex;
   flex-direction: column;
@@ -706,10 +717,48 @@ a:hover {
    SKILLS — M3 Chips
    =================================================== */
 
+.skill-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin: 16px 0 8px;
+}
+
+.skill-label:first-of-type {
+  margin-top: 0;
+}
+
 .skills-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.writing-list a {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.writing-list a:hover {
+  text-decoration: underline;
+}
+
+.writing-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
 }
 
 .skills-chips m3-chip {

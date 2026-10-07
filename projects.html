@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animesh — Projects</title>
-  <meta name="description" content="Open-source projects by Animesh — focusing apps, audio enhancers, home theater software, health trackers, and Linux app stores." />
-  <meta name="author" content="Animesh" />
+  <title>Animesh Singh — Projects</title>
+  <meta name="description" content="Open-source projects by Animesh Singh: Treasury, Deep Focus, Eclectic Home, Solene, and AudioHawk." />
+  <meta name="author" content="Animesh Singh" />
 
   <!-- Fonts + Material Symbols -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,7 +80,7 @@
           Projects
         </h1>
         <p class="hero-subtitle" id="projects-subtitle">
-          Open-source tools I'm building for GNU/Linux, Android, and beyond.
+          Open-source work for GNU/Linux and Android.
         </p>
       </div>
     </header>
@@ -90,45 +90,41 @@
     <!-- ═══════════════════════════════════════════ -->
     <section class="section projects-grid" id="projects-grid">
 
+      <!-- Treasury -->
+      <article class="project-card" id="project-treasury">
+        <div class="project-content">
+          <div class="project-header">
+            <h2 class="project-name">Treasury</h2>
+          </div>
+          <p class="project-desc">
+            Linux splits installs across Flatpak, Snap, APT, DNF, Pacman/AUR, AppImage, and tarballs.
+            Treasury is a PyQt6 application with one backend per format, a distro detector, Polkit for system installs, and bubblewrap around AUR builds.
+            <a href="https://github.com/RomanticTinkerer/treasury" target="_blank" rel="noopener noreferrer" class="inline-link">Repository</a>
+          </p>
+          <div class="project-tags">
+            <m3-chip variant="assist">GNU/Linux</m3-chip>
+            <m3-chip variant="assist">Python</m3-chip>
+            <m3-chip variant="assist">PyQt6</m3-chip>
+            <m3-chip variant="assist">Polkit</m3-chip>
+          </div>
+        </div>
+      </article>
+
       <!-- Deep Focus -->
       <article class="project-card" id="project-deep-focus">
         <div class="project-content">
           <div class="project-header">
             <h2 class="project-name">Deep Focus</h2>
-            <m3-chip variant="assist" class="project-status-chip">
-              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
-              WIP — 85%
-            </m3-chip>
           </div>
           <p class="project-desc">
-            Open-source focusing app that disables apps and websites at root level for a time period. 
-            An ideal focusing app for GNU/Linux. Inspired from Hollow Knight.
+            A focus session enforced by a root daemon, not a browser timer. It writes a marked block in /etc/hosts, signals blocked processes, and can take the notifications name on D-Bus. The client talks to the daemon over a Unix socket. A PyQt6 GUI, a CLI, and a systemd unit ship with it.
+            <a href="https://github.com/RomanticTinkerer/deepfocus" target="_blank" rel="noopener noreferrer" class="inline-link">Repository</a>
           </p>
           <div class="project-tags">
             <m3-chip variant="assist">GNU/Linux</m3-chip>
             <m3-chip variant="assist">Python</m3-chip>
-          </div>
-        </div>
-      </article>
-
-      <!-- AudioHawk -->
-      <article class="project-card" id="project-audiohawk">
-        <div class="project-content">
-          <div class="project-header">
-            <h2 class="project-name">AudioHawk</h2>
-            <m3-chip variant="assist" class="project-status-chip">
-              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
-              WIP
-            </m3-chip>
-          </div>
-          <p class="project-desc">
-            Open-source Audio Enhancer built on top of EasyEffects for Linux. Creates a better 
-            sound experience on the platform, aiming to be a similar software like Nahimic.
-          </p>
-          <div class="project-tags">
-            <m3-chip variant="assist">GNU/Linux</m3-chip>
-            <m3-chip variant="assist">Audio</m3-chip>
-            <m3-chip variant="assist">EasyEffects</m3-chip>
+            <m3-chip variant="assist">systemd</m3-chip>
+            <m3-chip variant="assist">D-Bus</m3-chip>
           </div>
         </div>
       </article>
@@ -138,21 +134,14 @@
         <div class="project-content">
           <div class="project-header">
             <h2 class="project-name">Eclectic Home</h2>
-            <m3-chip variant="assist" class="project-status-chip">
-              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
-              WIP
-            </m3-chip>
           </div>
           <p class="project-desc">
-            Built on foundational pillars of Kodi, VLC and Flutter. A complete Home theater software 
-            that allows you to run ANY game from your library (linked to 
-            <a href="https://lutris.net" target="_blank" rel="noopener noreferrer" class="inline-link">Lutris</a> 
-            — Steam, Heroic, etc.) as well as a plethora of movie and audio formats.
+            A home-console surface for media and games on GNU/Linux, on a Kodi base, with a Flutter interface, playback, and launch paths into Steam and Lutris.
           </p>
           <div class="project-tags">
+            <m3-chip variant="assist">GNU/Linux</m3-chip>
             <m3-chip variant="assist">Flutter</m3-chip>
             <m3-chip variant="assist">Kodi</m3-chip>
-            <m3-chip variant="assist">VLC</m3-chip>
           </div>
         </div>
       </article>
@@ -162,41 +151,33 @@
         <div class="project-content">
           <div class="project-header">
             <h2 class="project-name">solene</h2>
-            <m3-chip variant="assist" class="project-status-chip">
-              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
-              WIP
-            </m3-chip>
           </div>
           <p class="project-desc">
-            Open-source period tracker built on top of the drip application, supercharged with features 
-            found in freemium apps — and all processing done entirely on-device.
+            A local-first Android app so cycle data stays on the device, starting from the GPL project drip, with a Material 3 interface.
+            <a href="https://github.com/RomanticTinkerer/solene" target="_blank" rel="noopener noreferrer" class="inline-link">Repository</a>
           </p>
           <div class="project-tags">
             <m3-chip variant="assist">Android</m3-chip>
-            <m3-chip variant="assist">Kotlin</m3-chip>
-            <m3-chip variant="assist">Privacy</m3-chip>
+            <m3-chip variant="assist">Local-first</m3-chip>
           </div>
         </div>
       </article>
 
-      <!-- Treasury -->
-      <article class="project-card" id="project-treasury">
+      <!-- AudioHawk -->
+      <article class="project-card" id="project-audiohawk">
         <div class="project-content">
           <div class="project-header">
-            <h2 class="project-name">Treasury</h2>
-            <m3-chip variant="assist" class="project-status-chip">
-              <svg slot="icon" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="6" fill="#f59e0b"/></svg>
-              WIP
-            </m3-chip>
+            <h2 class="project-name">AudioHawk</h2>
           </div>
           <p class="project-desc">
-            A unified Linux Appstore for all distributions: Arch, Debian, and Fedora. Aims to simplify 
-            application installation, especially on Arch, and minimize terminal usage for non-tech people.
+            Listening profiles on PipeWire. The core is C, with GTK 4 for GNOME-family desktops and Qt 6 for Plasma.
+            <a href="https://github.com/RomanticTinkerer/audiohawk" target="_blank" rel="noopener noreferrer" class="inline-link">Repository</a>
           </p>
           <div class="project-tags">
             <m3-chip variant="assist">GNU/Linux</m3-chip>
-            <m3-chip variant="assist">Python</m3-chip>
-            <m3-chip variant="assist">Arch</m3-chip>
+            <m3-chip variant="assist">C</m3-chip>
+            <m3-chip variant="assist">C++</m3-chip>
+            <m3-chip variant="assist">PipeWire</m3-chip>
           </div>
         </div>
       </article>
