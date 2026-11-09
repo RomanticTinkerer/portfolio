@@ -1,0 +1,337 @@
+/*
+ * Material 3 Expressive, LastWave style, for the web.
+ *
+ * Load the fonts in <head> before this file:
+ *   <meta name="color-scheme" content="light dark">
+ *   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ *   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wdth,wght,GRAD,ROND@6..144,25..151,1..1000,0..100,0..100&display=swap">
+ *   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+ */
+
+/* ---------- Colour: one knob, --hue ---------- */
+
+:root {
+  --hue: 265;
+  color-scheme: light dark;
+
+  --primary: oklch(0.48 0.13 var(--hue));
+  --on-primary: oklch(1 0 0);
+  --primary-container: oklch(0.92 0.05 var(--hue));
+  --on-primary-container: oklch(0.27 0.08 var(--hue));
+  --background: oklch(0.985 0.006 var(--hue));
+  --on-surface: oklch(0.21 0.01 var(--hue));
+  --on-surface-variant: oklch(0.43 0.02 var(--hue));
+  --outline: oklch(0.6 0.02 var(--hue));
+  --surface-container: oklch(0.95 0.01 var(--hue));
+  --surface-container-high: oklch(0.93 0.012 var(--hue));
+  --surface-container-highest: oklch(0.905 0.014 var(--hue));
+  --error-container: oklch(0.92 0.05 25);
+  --on-error-container: oklch(0.32 0.11 25);
+
+  @media (prefers-color-scheme: dark) {
+    --primary: oklch(0.82 0.1 var(--hue));
+    --on-primary: oklch(0.3 0.08 var(--hue));
+    --primary-container: oklch(0.37 0.09 var(--hue));
+    --on-primary-container: oklch(0.93 0.04 var(--hue));
+    --background: oklch(0.16 0.01 var(--hue));
+    --on-surface: oklch(0.92 0.01 var(--hue));
+    --on-surface-variant: oklch(0.8 0.02 var(--hue));
+    --outline: oklch(0.62 0.02 var(--hue));
+    --surface-container: oklch(0.22 0.012 var(--hue));
+    --surface-container-high: oklch(0.26 0.014 var(--hue));
+    --surface-container-highest: oklch(0.3 0.016 var(--hue));
+    --error-container: oklch(0.38 0.1 25);
+    --on-error-container: oklch(0.92 0.05 25);
+  }
+
+  /* ---------- Shape ---------- */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-hero: 32px;
+  --radius-badge: 14px;
+  --radius-pill: 999px;
+
+  /* ---------- Motion ---------- */
+  /* Approximates Compose's spring(DampingRatioMediumBouncy, StiffnessMedium). */
+  --ease-spring: linear(0, 0.23 7%, 0.69 16%, 1.02 26%, 1.12 34%, 1.09 43%, 1.02 53%, 0.99 63%, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  accent-color: var(--primary);
+  background: var(--background);
+  color: var(--on-surface);
+  interpolate-size: allow-keywords;
+}
+
+/* ---------- Type: Google Sans Flex tuned per style ---------- */
+/* --w weight, --wd width %, --r roundness, --o optical size (= font size in px). */
+
+.display-large   { --w: 760; --wd: 122; --r: 42; --o: 57; font-size: 3.5625rem; line-height: 4rem; }
+.display-medium  { --w: 740; --wd: 120; --r: 40; --o: 45; font-size: 2.8125rem; line-height: 3.25rem; }
+.display-small   { --w: 720; --wd: 118; --r: 38; --o: 36; font-size: 2.25rem; line-height: 2.75rem; }
+.headline-large  { --w: 800; --wd: 122; --r: 40; --o: 32; font-size: 2rem; line-height: 2.5rem; }
+.headline-medium { --w: 780; --wd: 120; --r: 38; --o: 28; font-size: 1.75rem; line-height: 2.25rem; }
+.headline-small  { --w: 760; --wd: 116; --r: 36; --o: 24; font-size: 1.5rem; line-height: 2rem; }
+.title-large     { --w: 640; --wd: 110; --r: 30; --o: 22; font-size: 1.375rem; line-height: 1.75rem; }
+.title-medium    { --w: 600; --wd: 106; --r: 28; --o: 16; font-size: 1rem; line-height: 1.5rem; }
+.title-small     { --w: 580; --wd: 105; --r: 26; --o: 14; font-size: 0.875rem; line-height: 1.25rem; }
+.body-large, body { --w: 440; --wd: 102; --r: 18; --o: 16; font-size: 1rem; line-height: 1.5rem; }
+.body-medium     { --w: 430; --wd: 102; --r: 18; --o: 15; font-size: 0.9375rem; line-height: 1.375rem; }
+.body-small      { --w: 420; --wd: 100; --r: 16; --o: 13; font-size: 0.8125rem; line-height: 1.125rem; }
+.label-large     { --w: 680; --wd: 108; --r: 46; --o: 14; font-size: 0.875rem; line-height: 1.25rem; }
+.label-medium    { --w: 660; --wd: 108; --r: 44; --o: 12; font-size: 0.75rem; line-height: 1rem; }
+.label-small     { --w: 660; --wd: 108; --r: 44; --o: 11; font-size: 0.6875rem; line-height: 1rem; }
+
+body,
+.display-large, .display-medium, .display-small,
+.headline-large, .headline-medium, .headline-small,
+.title-large, .title-medium, .title-small,
+.body-large, .body-medium, .body-small,
+.label-large, .label-medium, .label-small {
+  font-family: "Google Sans Flex", system-ui, sans-serif;
+  font-weight: var(--w);
+  font-stretch: calc(var(--wd) * 1%);
+  font-variation-settings: "ROND" var(--r), "opsz" var(--o), "GRAD" 0;
+}
+
+body { margin: 0; }
+
+.material-symbols-rounded {
+  font-family: "Material Symbols Rounded";
+  font-size: 22px;
+  font-variation-settings: "FILL" 1, "wght" 500, "opsz" 24;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ---------- Layout ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 12px 20px 10px;
+  background: var(--surface-container);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 2px 6px oklch(0 0 0 / 0.15);
+}
+.header p { margin: 0; color: var(--on-surface-variant); }
+.header h1 { margin: 0; }
+
+.page {
+  display: grid;
+  gap: 24px;
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 16px 16px 24px;
+}
+
+.section { display: grid; gap: 8px; }
+.section-label {
+  margin: 0 0 2px 4px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Rows 3px apart, 28px outside corners, 6px inside, so a group reads as one surface. */
+.group { display: grid; gap: 3px; }
+.group > * { border-radius: 6px; }
+.group > :first-child { border-start-start-radius: var(--radius-xl); border-start-end-radius: var(--radius-xl); }
+.group > :last-child { border-end-start-radius: var(--radius-xl); border-end-end-radius: var(--radius-xl); }
+
+/* ---------- Rows ---------- */
+
+.row,
+.expandable > summary {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+.row,
+.expandable {
+  background: var(--surface-container-high);
+  transition: scale 0.35s var(--ease-spring);
+}
+.row:active,
+.expandable:has(> summary:active) { scale: 0.97; }
+
+.row-text { display: grid; min-width: 0; }
+.row-subtitle {
+  color: var(--on-surface-variant);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.icon-badge {
+  display: grid;
+  place-items: center;
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: var(--radius-badge);
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
+.icon-badge.error {
+  background: var(--error-container);
+  color: var(--on-error-container);
+}
+
+/* Expandable row: native <details>. Clicks on the switch toggle the switch only. */
+.expandable > summary { list-style: none; }
+.expandable > summary::-webkit-details-marker { display: none; }
+.expandable::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 0.35s var(--ease-emphasized), content-visibility 0.35s allow-discrete;
+}
+.expandable[open]::details-content { block-size: auto; }
+.expandable-body { padding: 0 16px 14px; }
+
+/* ---------- Switch: <input type="checkbox" switch role="switch" class="switch"> ---------- */
+
+.switch {
+  appearance: none;
+  flex: none;
+  margin: 0;
+  inline-size: 52px;
+  block-size: 32px;
+  border: 2px solid var(--outline);
+  border-radius: var(--radius-pill);
+  background: var(--surface-container-highest)
+    radial-gradient(circle, var(--outline) 0 8px, transparent 8.5px) no-repeat 0 50% / 28px 28px;
+  cursor: pointer;
+  transition: background-position 0.35s var(--ease-spring), background-color 0.2s;
+}
+.switch:checked {
+  border-color: var(--primary);
+  background: var(--primary)
+    radial-gradient(circle, var(--on-primary) 0 12px, transparent 12.5px) no-repeat 100% 50% / 28px 28px;
+}
+.switch:focus-visible,
+.choice :focus-visible + span {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* ---------- Connected choice: radios in <div class="choice" role="radiogroup"> ---------- */
+
+.choice { display: flex; gap: 2px; }
+.choice label { flex: 1; display: flex; }
+.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice span {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-block-size: 40px;
+  padding-inline: 8px;
+  border-radius: var(--radius-xs);
+  background: var(--surface-container-highest);
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  transition: border-radius 0.35s var(--ease-spring), background-color 0.2s;
+}
+.choice label:first-child span { border-start-start-radius: var(--radius-pill); border-end-start-radius: var(--radius-pill); }
+.choice label:last-child span { border-start-end-radius: var(--radius-pill); border-end-end-radius: var(--radius-pill); }
+.choice input:checked + span {
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+/* ---------- Hero card ---------- */
+
+.hero {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--radius-hero);
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
+.hero p { margin: 0; }
+
+input[type="range"] { inline-size: 100%; }
+
+/* ---------- Accessibility ---------- */
+
+@media (forced-colors: active) {
+  .header, .row, .expandable, .hero, .choice span { border: 1px solid CanvasText; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::details-content { transition-duration: 0s !important; }
+}
+
+/* Portfolio pieces the shared stylesheet does not cover. */
+
+a { color: var(--primary); }
+a.row { color: inherit; text-decoration: none; }
+.row.static { cursor: default; }
+.row.static:active { scale: 1; }
+.row.lead { grid-template-columns: 140px 1fr; }
+
+.portrait {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: var(--radius-hero);
+  justify-self: start;
+}
+.badge-img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--radius-badge);
+}
+.mark {
+  width: 132px;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 8px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-container-highest);
+  color: var(--on-surface-variant);
+}
+.row-text > .body-medium,
+.row-text > .body-small { color: var(--on-surface-variant); }
+.hero a { color: inherit; }
+
+html[data-theme="light"] {
+  --primary: oklch(0.48 0.13 var(--hue));
+  --on-primary: oklch(1 0 0);
+  --primary-container: oklch(0.92 0.05 var(--hue));
+  --on-primary-container: oklch(0.27 0.08 var(--hue));
+  --background: oklch(0.985 0.006 var(--hue));
+  --on-surface: oklch(0.21 0.01 var(--hue));
+  --on-surface-variant: oklch(0.43 0.02 var(--hue));
+  --outline: oklch(0.6 0.02 var(--hue));
+  --surface-container: oklch(0.95 0.01 var(--hue));
+  --surface-container-high: oklch(0.93 0.012 var(--hue));
+  --surface-container-highest: oklch(0.905 0.014 var(--hue));
+}
+html[data-theme="dark"] {
+  --primary: oklch(0.82 0.1 var(--hue));
+  --on-primary: oklch(0.3 0.08 var(--hue));
+  --primary-container: oklch(0.37 0.09 var(--hue));
+  --on-primary-container: oklch(0.93 0.04 var(--hue));
+  --background: oklch(0.16 0.01 var(--hue));
+  --on-surface: oklch(0.92 0.01 var(--hue));
+  --on-surface-variant: oklch(0.8 0.02 var(--hue));
+  --outline: oklch(0.62 0.02 var(--hue));
+  --surface-container: oklch(0.22 0.012 var(--hue));
+  --surface-container-high: oklch(0.26 0.014 var(--hue));
+  --surface-container-highest: oklch(0.3 0.016 var(--hue));
+}
